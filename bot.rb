@@ -100,9 +100,9 @@ class RateLimiter
 
     user_limit = nil
 
-    # Look up user by user name first, then by user id.
-    user_limit = @user_limits[user_name_key] unless user_name_key.nil?
-    user_limit = @user_limits[user_id_key] if user_limit.nil?
+    # Look up user by user id first, then by user name(if it exists).
+    user_limit = @user_limits[user_id_key]
+    user_limit = @user_limits[user_name_key] if user_limit.nil? && !user_name_key.nil?
 
     # If user is not in the configuration, allow the message.
     return Ok["User is not in the configuration"] if user_limit.nil?
@@ -478,3 +478,4 @@ def main_loop
 end
 
 main_loop
+

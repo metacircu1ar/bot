@@ -43,7 +43,7 @@ ALLOWED_CHAT_IDS = [
 # See USER_RATE_LIMITS in settings.rb for the detailed explanation.
 USER_RATE_LIMITS = [
   {
-    id: '@UsernameOfSomeoneYouWantToLimit',
+    id: '@UsernameOfSomeoneYouWantToLimit', # Also the user can be specified by user id, see settings.rb.
     rule_by_weekday: [0,0,0,0,0,nil,nil]
   },
   {

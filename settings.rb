@@ -11,9 +11,16 @@ ENABLE_DESTRUCTIVE_API_CALLS = true
 USER_RATE_LIMITS = [
   # Example user rate limit configuration:
   {
-    # To specify the user, if the user has a username(for example Dok_zzz), use @Dok_zzz format.
-    # Otherwise user id(for example 156111338) should be used with the ID:156111338 format.
+    # To specify the user, if the user has a username(for example Dok_zzz), 
+    # use @Dok_zzz format.
+    # Otherwise user id(for example 156111338) should be used with the 
+    # ID:156111338 format(see the example below).
+    # Specify the user by user name:
     id: '@Dok_zzz',
+    # Or specify the user by user id:
+    # id: 'ID:156111338',
+    # User id can be seen in the bot logs(gets printed with every message) or can be
+    # obtained from a Telegram bot, such as 'RawDataBot'.
     # Apply rule 0 from the RULE_LIST on all days, except for saturday and sunday.
     rule_by_weekday: [0,0,0,0,0,nil,nil]
   }
